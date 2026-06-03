@@ -11,19 +11,19 @@ import {
   ScanLine, LineChart, BellRing, Wallet, LayoutDashboard,
   Split, MonitorSmartphone, FlaskConical, PackageSearch,
   Bug, Lock, Gauge, Container, Workflow, ScrollText,
-  CloudCog, CheckSquare, Square, ChevronLeft, Lightbulb, Sparkles
+  CloudCog, CheckSquare, Square, ChevronLeft, Sparkles
 } from "lucide-react";
 
 const FUNCTIONS = [
   {
-    id: 0, label: "F-0", name: "Mise en place de l'environnement", who: "Toute l'équipe",
+    id: 0, label: "F-0", name: "Mise en place de l'environnement", who: "",
     status: "in-progress", progress: 60, color: "#14B8A6", Icon: Server,
     subfunctions: [
-      { id: "0.1", name: "Installer Java JDK 21 & Spring Boot", status: "done", stories: [
-        { id: "US-0.1.1", text: "Utiliser Java 21 pour de meilleures performances", endpoint: "java -version → 21" },
+      { id: "0.1", name: "Installer Java 25 & Spring Boot", status: "done", stories: [
+        { id: "US-0.1.1", text: "Utiliser Java 25 pour de meilleures performances", endpoint: "java -version → 21" },
         { id: "US-0.1.2", text: "Backend démarre simplement avec Maven", endpoint: "mvn spring-boot:run" },
       ], tasks: [
-        { id: "t1", text: "Installer JDK 21 (Eclipse Temurin ou Oracle)", done: false },
+        { id: "t1", text: "Installer JDK 25 (Eclipse Temurin ou Oracle)", done: false },
         { id: "t2", text: "Installer Maven 3.9+", done: false },
         { id: "t3", text: "Cloner le code et lancer mvn clean install", done: false },
         { id: "t4", text: "Démarrer l'application : mvn spring-boot:run", done: false },
@@ -297,28 +297,28 @@ const FUNCTIONS = [
     id: 11, label: "F-11", name: "Migration Frontend (Statique → React)", who: "Frontend",
     status: "todo", progress: 0, color: "#EC4899", Icon: Code2,
     subfunctions: [
-      { id: "11.1", name: "Pages d'authentification", status: "todo", sfTag: "idée", stories: [
+      { id: "11.1", name: "Pages d'authentification", status: "todo", stories: [
         { id: "US-11.1.1", text: "En tant que client, se connecter via une page moderne et réactive", endpoint: "/login React" },
       ], tasks: [
-        { id: "t86", text: "Créer le projet React avec Vite", done: false, tag: "idée" },
-        { id: "t87", text: "Mettre en place React Router (/login, /admin, /pipelines, /alerts, /budget)", done: false, tag: "idée" },
-        { id: "t88", text: "Intégrer Axios + intercepteur JWT", done: false, tag: "idée" },
+        { id: "t86", text: "Créer le projet React avec Vite", done: false },
+        { id: "t87", text: "Mettre en place React Router (/login, /admin, /pipelines, /alerts, /budget)", done: false },
+        { id: "t88", text: "Intégrer Axios + intercepteur JWT", done: false },
       ]},
-      { id: "11.2", name: "Dashboard admin dynamique", status: "todo", sfTag: "idée", stories: [
+      { id: "11.2", name: "Dashboard admin dynamique", status: "todo", stories: [
         { id: "US-11.2.1", text: "En tant qu'admin, voir des graphiques interactifs (clients, tendances)", endpoint: "Recharts dashboard" },
       ], tasks: [
-        { id: "t89", text: "Migrer la page admin vers React avec Recharts", done: false, tag: "idée" },
+        { id: "t89", text: "Migrer la page admin vers React avec Recharts", done: false },
       ]},
-      { id: "11.3", name: "Gestion des pipelines dynamique", status: "todo", sfTag: "idée", stories: [
+      { id: "11.3", name: "Gestion des pipelines dynamique", status: "todo", stories: [
         { id: "US-11.3.1", text: "En tant que client, configurer un pipeline sans recharger la page", endpoint: "Wizard pas à pas React" },
       ], tasks: [
-        { id: "t90", text: "Créer wizard pipeline en React (step by step)", done: false, tag: "idée" },
+        { id: "t90", text: "Créer wizard pipeline en React (step by step)", done: false },
       ]},
-      { id: "11.4", name: "Liste des alertes dynamique", status: "todo", sfTag: "idée", stories: [
+      { id: "11.4", name: "Liste des alertes dynamique", status: "todo", stories: [
         { id: "US-11.4.1", text: "En tant que client, filtrer les alertes instantanément (sans rafraîchissement)", endpoint: "Filtres en temps réel" },
       ], tasks: [
-        { id: "t91", text: "Migrer la page alertes vers React avec filtres temps réel", done: false, tag: "idée" },
-        { id: "t92", text: "Test réel client 1,2,3 : Parcours complet de l'application dynamique", done: false, tag: "idée" },
+        { id: "t91", text: "Migrer la page alertes vers React avec filtres temps réel", done: false },
+        { id: "t92", text: "Test réel client 1,2,3 : Parcours complet de l'application dynamique", done: false },
       ]},
     ]
   },
@@ -353,7 +353,7 @@ const FUNCTIONS = [
     ]
   },
   {
-    id: 13, label: "F-13", name: "Documentation", who: "Tech Lead",
+    id: 13, label: "F-13", name: "Documentation", who: "",
     status: "in-progress", progress: 30, color: "#22C55E", Icon: BookOpen,
     subfunctions: [
       { id: "13.1", name: "Documentation API", status: "in-progress", stories: [
@@ -622,7 +622,6 @@ html,body,#root{height:100%;font-family:var(--sans)}
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,${dark?0.55:0.25});z-index:49;backdrop-filter:blur(2px)}
 .tag-badge{display:inline-flex;align-items:center;gap:3px;font-family:var(--mono);font-size:8px;font-weight:700;padding:2px 7px;border-radius:10px;letter-spacing:.04em;flex-shrink:0;white-space:nowrap}
 .tag-proposition{background:rgba(139,92,246,0.1);color:#8B5CF6;border:1px solid rgba(139,92,246,0.25)}
-.tag-idee{background:rgba(236,72,153,0.1);color:#EC4899;border:1px solid rgba(236,72,153,0.25)}
 ::-webkit-scrollbar{width:4px;height:4px}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
 ::-webkit-scrollbar-track{background:transparent}
@@ -640,10 +639,8 @@ export default function App() {
   const [expandedSfs, setExpandedSfs] = useState({});
   const [view, setView] = useState("list");
   const [tasks, setTasks] = useState(() => {
-    // Build default map from FUNCTIONS data
     const defaults = {};
     FUNCTIONS.forEach(fn => fn.subfunctions.forEach(sf => (sf.tasks || []).forEach(t => { defaults[t.id] = t.done; })));
-    // Merge with persisted state from localStorage
     try {
       const saved = localStorage.getItem("ae-tasks-v1");
       if (saved) {
@@ -677,10 +674,9 @@ export default function App() {
   const totalTasksCount = Object.keys(tasks).length;
   const openDetail = (fn, e) => { e.stopPropagation(); setDetailFn(fn); setDetailOpen(true); };
 
-  // ── Compute live progress & status from task checkboxes ──────────────────
   const getFnProgress = (fn) => {
     const allTasks = fn.subfunctions.flatMap(sf => sf.tasks || []);
-    if (allTasks.length === 0) return fn.progress; // fallback if no tasks
+    if (allTasks.length === 0) return fn.progress;
     const done = allTasks.filter(t => tasks[t.id]).length;
     return Math.round((done / allTasks.length) * 100);
   };
@@ -938,7 +934,7 @@ export default function App() {
                       <div className="fn-label" style={{ background: fn.color + "18", color: fn.color, border: `1px solid ${fn.color}30` }}>{fn.label}</div>
                       <div className="fn-name">{fn.name}</div>
                       <div className="fn-meta">
-                        <div className="who-badge">{fn.who}</div>
+                        {fn.who && <div className="who-badge">{fn.who}</div>}
                         <div className="badge" style={{ background: sm.bg, color: sm.color, borderColor: sm.color + "30" }}>
                           <sm.Icon size={9} />{sm.label}
                         </div>
@@ -964,7 +960,6 @@ export default function App() {
                                   <div style={{ width: 7, height: 7, borderRadius: "50%", background: sfSm.color, flexShrink: 0 }} />
                                   <span className="sf-name">{sf.name}</span>
                                   {sf.sfTag === "proposition" && <span className="tag-badge tag-proposition"><Sparkles size={8} /> Proposition</span>}
-                                  {sf.sfTag === "idée" && <span className="tag-badge tag-idee"><Lightbulb size={8} /> Idée à développer</span>}
                                   {sf.stories && (
                                     <span style={{ fontFamily: "var(--mono)", fontSize: 9, color: "var(--muted)", marginRight: 8 }}>
                                       {sf.stories.length} stories
@@ -1003,7 +998,6 @@ export default function App() {
                                             </div>
                                             <span className={`task-text${tasks[t.id] ? " done" : ""}`}>{t.text}</span>
                                             {t.tag === "proposition" && <span className="tag-badge tag-proposition"><Sparkles size={8} /> Proposition</span>}
-                                            {t.tag === "idée" && <span className="tag-badge tag-idee"><Lightbulb size={8} /> Idée</span>}
                                           </div>
                                         ))}
                                       </>
@@ -1052,7 +1046,7 @@ export default function App() {
                             </div>
                           </div>
                           <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>
-                            <div className="who-badge">{fn.who}</div>
+                            {fn.who && <div className="who-badge">{fn.who}</div>}
                           </div>
                           <div className="progress-bar"><div className="progress-fill" style={{ width: bProgress + "%", background: fn.color }} /></div>
                           <div style={{ fontFamily: "var(--mono)", fontSize: 9, color: "var(--muted)", marginTop: 4, textAlign: "right" }}>{bProgress}%</div>
@@ -1078,7 +1072,7 @@ export default function App() {
                     <span className="tl-id">{fn.label}</span>
                     <div style={{ width: 8, height: 8, borderRadius: "50%", background: fn.color, flexShrink: 0 }} />
                     <span className="tl-name">{fn.name}</span>
-                    <div className="who-badge" style={{ flexShrink: 0 }}>{fn.who}</div>
+                    {fn.who && <div className="who-badge" style={{ flexShrink: 0 }}>{fn.who}</div>}
                     <div className="badge" style={{ background: sm.bg, color: sm.color, borderColor: sm.color + "30", flexShrink: 0 }}>
                       <sm.Icon size={9} />{sm.label}
                     </div>
@@ -1109,7 +1103,7 @@ export default function App() {
                 <div className="detail-section-title">Overview</div>
                 <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 14 }}>
                   {(() => { const sm = STATUS_META[getFnStatus(detailFn)]; return <div className="badge" style={{ background: sm.bg, color: sm.color, borderColor: sm.color + "30" }}><sm.Icon size={9} />{sm.label}</div>; })()}
-                  <div className="who-badge">{detailFn.who}</div>
+                  {detailFn.who && <div className="who-badge">{detailFn.who}</div>}
                   <div className="badge" style={{ background: "rgba(59,130,246,0.08)", color: "var(--blue)", borderColor: "rgba(59,130,246,0.2)" }}><CheckSquare size={9} />{getTotalTasks(detailFn)} tasks</div>
                 </div>
                 <div>
@@ -1151,7 +1145,6 @@ export default function App() {
                               </div>
                               <span className={`task-text${tasks[t.id] ? " done" : ""}`} style={{ fontSize: 11 }}>{t.text}</span>
                               {t.tag === "proposition" && <span className="tag-badge tag-proposition" style={{ marginTop: 2 }}><Sparkles size={8} /> Proposition</span>}
-                              {t.tag === "idée" && <span className="tag-badge tag-idee" style={{ marginTop: 2 }}><Lightbulb size={8} /> Idée</span>}
                             </div>
                           ))}
                         </div>
